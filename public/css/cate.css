@@ -1,0 +1,31 @@
+.centro{
+    grid-template-columns: 20% 80%;
+    text-align: center;
+    margin: 20px;
+    display: grid;
+}
+
+.pro{
+    border: 2px solid black;
+    margin: 10px;
+    text-align: center;
+    height: 100px;
+    width: 160px;
+    border-radius: 100px;
+}
+
+.ff{
+    grid-template-columns: auto auto auto;
+    display: flex;
+}
+
+.abaj{
+    text-align: center;
+    margin: 20px;
+}
+
+.bobb{
+    background-image: url('/img/fondd.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
