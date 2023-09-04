@@ -31,6 +31,11 @@ Route::get('/categorias', [App\Http\Controllers\cateController::class, 'index'])
 
 Route::get('/index', [App\Http\Controllers\ClienteController::class, 'index'])->name('cliente.index');
 
+Route::get('/cambiar-paginacion/{perPage}', 'productosController@cambiarPaginacion')->name('cambiarPaginacion');
+
+
+Route::get('productos', [App\Http\Controllers\productosController::class, 'index'])->name('productos.index');
+Route::get('imagenes', [App\Http\Controllers\productosController::class, 'show'])->name('imagenes');
 
 
 
