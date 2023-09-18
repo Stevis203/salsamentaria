@@ -99,7 +99,6 @@
 
                 
                     @foreach ($catego as $cate)
-<<<<<<< HEAD
                     <div class="col-ms-12 col-md-4 col-xxl-3" style="width: 18rem;">
                         <div class="card">
                             <a href=""> <img src="{{ asset('img') . '/' . $cate->imagen}}" class="card-img-top" alt="..."></a>
@@ -108,11 +107,9 @@
                             </div>
                         </div>
                       </div>
-=======
       
                             <img src="{{ asset('img') . '/' . $cate->imagen}}" class="card-img-top" alt="...">
                               <h5 class="card-title">{{$cate->nombre}}</h5>                         
->>>>>>> e50e4a49dba61e24352922b8b35689bdd63992ae
                 @endforeach 
             </div>
                 </div>

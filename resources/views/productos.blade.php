@@ -68,7 +68,7 @@
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
+                                         document.getElementById('logout-form').submit();">
                                             {{ __('Salir') }}
                                         </a>
     
@@ -185,22 +185,17 @@
     .pagination a:hover {
         color: black; /* Cambia el color al pasar el ratón por encima */
     }
-    .productos{
-  border: 10px solid black;
-  position: relative;
-  border-color: black;
-  border-radius: 5px;
-  border: 10px;
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  justify-content: center;
-  width: 800px;
-  height: 385px;
-  margin-left: 2px;
-  margin-right: 120px;
-  margin-top: 20px;
-  background-color: white;
-  /*border: 2px solid red;*/
+    
+        .productos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Dos columnas por fila */
+            gap: 20px; /* Espacio entre las cajas de productos */
+            justify-content: center;
+            background-color: white;
+            width: 100%; /* Utiliza todo el ancho disponible */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra para las cajas */
   
   }
   .contenido{
@@ -213,12 +208,14 @@
     background-repeat: no-repeat
 
   }
-  .titulo{
-    margin-top: 80px;
-    margin-left: 500px;
-    margin-right: 400px;
-    background-color: rgba(255, 255, 255, 0.754);
-    width: 400px;
+  .titulo {
+            margin-top: 80px;
+            text-align: center; /* Centra el texto del título */
+            background-color: rgba(255, 255, 255, 0.754);
+            width: 400px;
+            margin: 0 auto; /* Centra el bloque en el medio */
+            padding: 20px;
+            border-radius: 5px;
     
     
   }
