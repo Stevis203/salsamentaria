@@ -92,7 +92,7 @@
                     @foreach ($catego as $cate)
                     <div class="col-ms-12 col-md-4 col-xxl-3" style="width: 18rem;">
                         <div class="card">
-                            <img src="{{ asset('img') . '/' . $cate->imagen}}" class="card-img-top" alt="...">
+                            <a href=""> <img src="{{ asset('img') . '/' . $cate->imagen}}" class="card-img-top" alt="..."></a>
                             <div class="card-body">
                               <h5 class="card-title">{{$cate->nombre}}</h5>
                             </div>
@@ -101,13 +101,13 @@
                 @endforeach 
                 </div>
             </div>
-           
+
         </div>
-    
+
         <main class="py-4">
             @yield('content')
         </main>
-        <div style="background-color: rgb(255, 255, 255)" class="abaj">
+        <div style="background-color: rgb(255, 255, 255);font-family: 'Times New Roman', Times, serif" class="abaj">
             <h3>con el derecho reservado al autor</h3>
         </div>
     </div>

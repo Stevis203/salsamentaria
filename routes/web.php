@@ -28,9 +28,9 @@ Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/categorias', [App\Http\Controllers\cateController::class, 'index'])->name('cate.index');
 
+Route::get('/administrador', [App\Http\Controllers\AdministradorController::class, 'index'])->name('administrador.index');
 
 Route::get('/index', [App\Http\Controllers\ClienteController::class, 'index'])->name('cliente.index');
-
 
 
 
