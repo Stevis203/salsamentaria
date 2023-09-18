@@ -9,5 +9,4 @@
 @extends('layouts.' . $vista)
 
 @section('content')
-
 @endsection

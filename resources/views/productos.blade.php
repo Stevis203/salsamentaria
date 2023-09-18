@@ -1,5 +1,4 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -10,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
+    <link rel="stylesheet" href="{{ asset('css/productos.css') }}">
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
@@ -20,11 +19,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    <link rel="stylesheet" href="{{ asset('css/cate.css')}}">
 
+    
+    <title>Catálogo</title>
 </head>
-
-    <header>
+<header>
     <div class="bobb">
         <div id="app">
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -85,72 +84,148 @@
             </nav>
         </div>
      </header>
-    
-     <body>
-        @include('menu')
-        <div style="margin: 10px; color:rgb(0, 0, 0); background-color: rgb(255, 255, 255);font-family: 'Times New Roman', Times, serif">
-            <h1>CATEGORIAS</h1>  
+<body>
+    @include('menu')
+    <div class="titulo">
+        <h1>Lista de Productos</h1>
         </div>
-        <div class="todo">
-            
-            <div class="centro">
-                <div class="row justify-content-center gap-4">
-                <div class="hola">
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <div class="menun">
 
-                
-                    @foreach ($catego as $cate)
-<<<<<<< HEAD
-                    <div class="col-ms-12 col-md-4 col-xxl-3" style="width: 18rem;">
-                        <div class="card">
-                            <a href=""> <img src="{{ asset('img') . '/' . $cate->imagen}}" class="card-img-top" alt="..."></a>
-                            <div class="card-body">
-                              <h5 class="card-title">{{$cate->nombre}}</h5>
-                            </div>
-                        </div>
-                      </div>
-=======
-      
-                            <img src="{{ asset('img') . '/' . $cate->imagen}}" class="card-img-top" alt="...">
-                              <h5 class="card-title">{{$cate->nombre}}</h5>                         
->>>>>>> e50e4a49dba61e24352922b8b35689bdd63992ae
-                @endforeach 
-            </div>
                 </div>
             </div>
+            <div class="col-6">
+               
+                    <table>
+                        <div class="contenido">
+                                <div class="pagination">
+                                    <!-- Enlace para retroceder a la página anterior -->
+                 @if ($firstItems->count() > 0 && $currentPage > 1)
+                <a href="{{ route('productos.index', ['page' => $currentPage - 1]) }}"><</a>
+                @endif
+            </div>
+                                <div class="productos">
+                                    @forelse ($firstItems as $fila)
+                                        <div class="cont">
+                                            {{$fila->nombre}}
+                                            {{$fila->marca}}
+                                            {{$fila->descripcion}}
+                                            {{$fila->precio}}
+                                            <img src="{{asset('img/'. $fila->imagen)}}" alt="Imagen" width="120px" height="120">
+                                            @include('cantidad')
+                                            <a href="#">Agregar</a>
 
-        </div>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
-        <div style="background-color: rgb(255, 255, 255);font-family: 'Times New Roman', Times, serif" class="abaj">
-            <h3>con el derecho reservado al autor</h3>
+                                            
+                                        </div>
+                                        
+                                    @empty 
+                                    @endforelse
+                                     </div>
+                                     <div class="pagination2">
+                                        <!-- Enlace para avanzar a la página siguiente -->
+                                        @if ($firstItems->count() > 0)
+                                            <a href="{{ route('productos.index', ['page' => $currentPage + 1]) }}">></a>
+                                        @endif
+                                    </div>
+                           
+                        
+                    </table>
+            </div>
+            </div>
         </div>
     </div>
-</body>
-</html>
-<style>
-    .todo{
-       
-        column-count: 3;
-        column-gap: 20px;
-        margin: auto;
-       
+    
+    <style>
+        body{
+            background-image: url("./img/fondo.avif");
+        }
+        .pagitation{
+            
+        }
+        .container{
+            margin: 0;
+            padding: 0;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .row{
+            columns: 3;
 
-    }
-    .centro{
-        height: 200px;
-        width: 1000px;
-       
-    }
-    .container{
-        margin-left: 15px;
-        margin-left: 2px;
+        }
+    .menun{
         margin-right: 2px;
-    }
-    .hola{
         margin-left: 2px;
+        width: 20px;
+    }
+    .pagination a {
+        font-size: 50px; /* Ajusta el tamaño del texto según tu preferencia */
         margin-right: 2px;
         margin-top: 100px;
+        margin-left: 100px;
+       /* border: 2px solid red;*/
+        display: 
+         /* Añade un espacio entre los enlaces */
+        text-decoration: none; /* Elimina el subrayado predeterminado */
     }
-</style>
+    .pagination2 {
+        font-size: 50px; /* Ajusta el tamaño del texto según tu preferencia */
+        margin-right: 2px;
+        margin-top: 100px;
+        margin-left: 2px;
+        /*border: 2px solid red;*/
+        display: 
+         /* Añade un espacio entre los enlaces */
+        text-decoration: none; /* Elimina el subrayado predeterminado */
+    }
+    
+    .pagination a:hover {
+        color: black; /* Cambia el color al pasar el ratón por encima */
+    }
+    .productos{
+  border: 10px solid black;
+  position: relative;
+  border-color: black;
+  border-radius: 5px;
+  border: 10px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: center;
+  width: 800px;
+  height: 385px;
+  margin-left: 2px;
+  margin-right: 120px;
+  margin-top: 20px;
+  background-color: white;
+  /*border: 2px solid red;*/
+  
+  }
+  .contenido{
+    display: flex;
+    justify-content: space-between;
+    /*border: 2px solid red;*/
+    width: 1000px;    
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat
+
+  }
+  .titulo{
+    margin-top: 80px;
+    margin-left: 500px;
+    margin-right: 400px;
+    background-color: rgba(255, 255, 255, 0.754);
+    width: 400px;
+    
+    
+  }
+    </style>
+    <!-- Botones de navegación -->
+    
+    
+    
+</body>
+</html>
