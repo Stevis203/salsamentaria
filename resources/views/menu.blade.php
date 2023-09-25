@@ -1,37 +1,47 @@
-
-
-<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Menú</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    <p></p>
-    <ul>
-        <li>
-            <a href="{{ route('productos.index') }}"><i class="ion-bag"></i> <span>Productos</span></a>
-        </li>
-    </ul>
-    <ul>
-        <li>
-        <a href="{{ route('cate.index') }}"><i class="ion-ios-settings"></i> <span class="">Categorías</span></a>
-        </li>
-    </ul>
-    <ul>
-      <li>
-        <a href="#"><i class="ion-ios-briefcase-outline"></i> <span class="">Servivios</span></a>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menú de Navegación</title>
+    <style>
         
-      </li>
-    </ul>
-    <ul>
-      <li>
-        <a href="#"><i class="ion-ios-analytics-outline"></i> <span class="">Contactanos</span></a>
+        ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333; /* Color de fondo del menú */
+    text-align: center; /* Centra el menú horizontalmente */
+}
 
-          </li>
-        </ul>
-          
-    </ul>
+li {
+    display: inline-block; 
+    vertical-align: middle;
+    margin: 0 10px; 
+}
 
-  </div>
-</div>
- 
+li a {
+    display: block;
+    color: white; 
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px; 
+}
+
+li a:hover {
+    background-color: #ff6600; /* Color de fondo al pasar el mouse sobre el enlace */
+}
+
+    </style>
+</head>
+<body>
+
+<ul>
+    <li><a href="productos.blade.php">Productos</a></li>
+    <li><a href="cate.blade.php">Categorías</a></li>
+    <li><a href="">Servicios</a></li>
+    <li><a href="">Contactos</a></li>
+</ul>
+
+</body>
+</html>

@@ -28,10 +28,6 @@
         <div id="app">
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                 <div class="container">
-                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                        <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                      </svg></button>
                     <a class="navbar-brand" href="{{ url('/') }}">
                         <h2 style="font-family: 'Times New Roman', Times, serif">Salsamentaria Juanchos</h2>
                     </a>
@@ -83,9 +79,10 @@
                 </div>
             </nav>
         </div>
+        @include('menu')
      </header>
 <body>
-    @include('menu')
+   
     <div class="titulo">
         <h1>Lista de Productos</h1>
         </div>
@@ -213,15 +210,17 @@
     background-repeat: no-repeat
 
   }
-  .titulo{
-    margin-top: 80px;
-    margin-left: 500px;
-    margin-right: 400px;
-    background-color: rgba(255, 255, 255, 0.754);
-    width: 400px;
+    .titulo {
+            margin-top: 80px;
+            text-align: center; /* Centra el texto del título */
+            background-color: rgba(255, 255, 255, 0.754);
+            width: 400px;
+            margin: 0 auto; /* Centra el bloque en el medio */
+            padding: 20px;
+            border-radius: 5px;
+        }
     
     
-  }
     </style>
     <!-- Botones de navegación -->
     

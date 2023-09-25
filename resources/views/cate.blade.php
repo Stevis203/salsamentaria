@@ -1,5 +1,4 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -10,7 +9,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
@@ -20,7 +18,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    <link rel="stylesheet" href="{{ asset('css/cate.css')}}">
 
 </head>
 
@@ -29,10 +26,7 @@
         <div id="app">
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                 <div class="container">
-                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                        <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                      </svg></button>
+                    
                     <a class="navbar-brand" href="{{ url('/') }}">
                         <h2 style="font-family: 'Times New Roman', Times, serif">Salsamentaria Juanchos</h2>
                     </a>
@@ -88,27 +82,20 @@
     
      <body>
         @include('menu')
-        <div style="margin: 10px; color:rgb(0, 0, 0); background-color: rgb(255, 255, 255);font-family: 'Times New Roman', Times, serif">
-            <h1>CATEGORIAS</h1>  
-        </div>
+        <div class="titulo">
+            <h1>CATEGORIAS</h1>
         <div class="todo">
-            
             <div class="centro">
-                <div class="row justify-content-center gap-4">
-                <div class="hola">
-
-                
-                    @foreach ($catego as $cate)
-      
-                            <img src="{{ asset('img') . '/' . $cate->imagen}}" class="card-img-top" alt="...">
-                              <h5 class="card-title">{{$cate->nombre}}</h5>                         
-                @endforeach 
-            </div>
+                @foreach ($catego as $cate)
+                <div class="holaa">
+                    <a href=""><img src="{{ asset('img') . '/' . $cate->imagen }}" class="card-img-top" alt="..."></a>
+                    
+                    <h5 class="card-title">{{ $cate->nombre }}</h5>
+                    <!-- Agrega aquí el enlace o cualquier otro contenido que desees -->
                 </div>
+                @endforeach
             </div>
-           
         </div>
-    
         <main class="py-4">
             @yield('content')
         </main>
@@ -119,27 +106,43 @@
 </body>
 </html>
 <style>
-    .todo{
-       
-        column-count: 3;
-        column-gap: 20px;
-        margin: auto;
-       
+body{
+     background-image: url("https://img.freepik.com/vector-premium/fondo-transparente-alimentos_651154-996.jpg");
+}
+.todo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 1000px; /* Ajusta el ancho máximo del contenedor */
+    padding: 20px; /* Espacio alrededor del contenido */
+}
 
-    }
-    .centro{
-        height: 200px;
-        width: 1000px;
-       
-    }
-    .container{
-        margin-left: 15px;
-        margin-left: 2px;
-        margin-right: 2px;
-    }
-    .hola{
-        margin-left: 2px;
-        margin-right: 2px;
-        margin-top: 100px;
-    }
+/* Estilo para cada caja de imagen y su contenido */
+.holaa {
+    width: 23%; /* Ancho de la caja de imagen */
+    height: 220px; /* Altura fija para las cajas (ajusta según tus preferencias) */
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    display: inline-block; /* Para que las cajas se coloquen en línea */
+    vertical-align: top; /* Para alinear las cajas en la parte superior */
+}
+
+.holaa img {
+    max-width: 100%;
+    max-height: 80%; /* Hace que las imágenes se ajusten a la altura fija de las cajas */
+}
+
+/* Estilo para el título */
+.titulo {
+    text-align: center;
+    margin: 20px 0;
+    color: #333;
+    font-size: 24px;
+}
+
+
 </style>
