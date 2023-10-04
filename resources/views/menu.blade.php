@@ -37,8 +37,8 @@ li a:hover {
 <body>
 
 <ul>
-    <li><a href="productos.blade.php">Productos</a></li>
-    <li><a href="cate.blade.php">Categorías</a></li>
+    <li><a href="productos">Productos</a></li>
+    <li><a href="categorias">Categorías</a></li>
     <li><a href="">Servicios</a></li>
     <li><a href="">Contactos</a></li>
 </ul>

@@ -111,8 +111,12 @@
                                             {{$fila->descripcion}}
                                             {{$fila->precio}}
                                             <img src="{{asset('img/'. $fila->imagen)}}" alt="Imagen" width="120px" height="120">
+                                           
+                                           
+
                                             @include('cantidad')
-                                            <a href="#">Agregar</a>
+                                            <a href="">Agregar</a>
+                                    
 
                                             
                                         </div>
@@ -125,15 +129,13 @@
                                         @if ($firstItems->count() > 0)
                                             <a href="{{ route('productos.index', ['page' => $currentPage + 1]) }}">></a>
                                         @endif
-                                    </div>
-                           
-                        
-                    </table>
-            </div>
+                                        </div>
+                            </table>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    
+        
     <style>
         body{
             background-image: url("./img/fondo.avif");

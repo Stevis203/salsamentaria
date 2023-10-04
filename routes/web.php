@@ -36,6 +36,16 @@ Route::get('/cambiar-paginacion/{perPage}', 'productosController@cambiarPaginaci
 
 Route::get('productos', [App\Http\Controllers\productosController::class, 'index'])->name('productos.index');
 Route::get('imagenes', [App\Http\Controllers\productosController::class, 'show'])->name('imagenes');
+Route::get('/jamon', function () {
+    return view('jamon');
+});
+Route::get('/carnes', function () {
+    return view('carnes');
+});
+Route::get('/quesos', function () {
+    return view('quesos');
+});
+
 
 
 
