@@ -79,70 +79,65 @@
             </nav>
         </div>
      </header>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Cliente</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Vendedor</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Administrador</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2"  type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+    <h1 style="text-align: center; margin: 10px; font-family: 'Times New Roman', Times, serif">MIRA LOS PROVEEDORES DE LA EMPRESA</h1>
+    <div class="container">
+        <table class="table table-bordered">
+            <tr class="letra" style="text-align: center; ">
+                <td style="background-color: dimgrey; color: white">NOMBRE</td>
+                <td style="background-color: dimgrey; color: white">APELLIDO</td>
+                <td style="background-color: dimgrey; color: white">DOCUMENTO</td>
+                <td style="background-color: dimgrey; color: white">TELEFONO</td>
+                <td style="background-color: dimgrey; color: white">DIRECCION</td>            
+                <td style="background-color: dimgrey; color: white">CORREO ELECTRONICO</td>
+                <td style="background-color: dimgrey; color: white" colspan="2">ACCIONES</td>
     
-     <body>
-        @include('menu')
-        <div class="titulo">
-            <h1>CATEGORIAS</h1>
-        <div class="todo">
-            <div class="centro">
-                @foreach ($catego as $cate)
-                <div class="holaa">
-                    <a href=""><img src="{{ asset('img') . '/' . $cate->imagen }}" class="card-img-top" alt="..."></a>
-                    
-                    <h5 class="card-title">{{ $cate->nombre }}</h5>
-                    <!-- Agrega aquí el enlace o cualquier otro contenido que desees -->
-                </div>
-                @endforeach
-            </div>
-        </div>
-        <main class="py-4">
-            @yield('content')
-        </main>
-        <div style="background-color: rgb(255, 255, 255)" class="abaj">
-            <h3>con el derecho reservado al autor</h3>
-        </div>
+            </tr>
+        
+            <style ></style>
+    
+            @foreach ($user as $clie)
+            <tr style="text-align: center">
+                <td>{{ $clie->name }}</td>
+                <td>{{ $clie->apellido }}</td>
+                <td>{{ $clie->documento }}</td>
+                <td>{{ $clie->telefono }}</td>
+                <td>{{ $clie->direccion }}</td>
+                <td>{{ $clie->email }}</td>
+                <td><a href="{{ route('edit', $clie->id)}}"><button type="button" class="btn btn-primary">EDITAR</button></a></td>
+                <td><a href="{{ route('msproveedor.destroy', $clie->id)}}"><button type="button" class="btn btn-danger" onclick="return confirm('Esta seguro de eliminar este cliente')">ELIMINAR</button></a></td>
+            </tr>
+            @endforeach
+        </table> 
     </div>
 </body>
 </html>
-<style>
-body{
-     background-image: url("https://img.freepik.com/vector-premium/fondo-transparente-alimentos_651154-996.jpg");
-}
-.todo {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 20px auto;
-    max-width: 1000px; /* Ajusta el ancho máximo del contenedor */
-    padding: 20px; /* Espacio alrededor del contenido */
-}
-
-/* Estilo para cada caja de imagen y su contenido */
-.holaa {
-    width: 23%; /* Ancho de la caja de imagen */
-    height: 220px; /* Altura fija para las cajas (ajusta según tus preferencias) */
-    margin: 10px;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    display: inline-block; /* Para que las cajas se coloquen en línea */
-    vertical-align: top; /* Para alinear las cajas en la parte superior */
-}
-
-.holaa img {
-    max-width: 100%;
-    max-height: 80%; /* Hace que las imágenes se ajusten a la altura fija de las cajas */
-}
-
-/* Estilo para el título */
-.titulo {
-    text-align: center;
-    margin: 20px 0;
-    color: #333;
-    font-size: 24px;
-}
-
-
-</style>
