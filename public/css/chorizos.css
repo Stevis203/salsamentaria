@@ -1,12 +1,9 @@
-/* public/css/carnes.css */
-
+/* Agrega este CSS a tu archivo CSS (carnes.css) */
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-    background-image: url('https://img.freepik.com/foto-gratis/ingredientes-cocinar-pasta-sobre-fondo-madera_23-2147925943.jpg');
     margin: 0;
     padding: 0;
-   
 }
 
 .container {
@@ -16,21 +13,23 @@ body {
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Para centrar el contenido */
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 20px;
-    color: #333;
 }
 
-.carnes {
+/* Contenedor de las cajas de productos */
+.chorizos {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: flex-start; /* Alinear las cajas en la parte superior */
 }
 
-.carnes-box {
+/* Estilo de cada caja de producto */
+.chorizos-box {
     width: calc(33.33% - 20px);
     margin-bottom: 20px;
     padding: 10px;
@@ -39,29 +38,18 @@ h1 {
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.3s ease-in-out;
+    background-image: url('https://img.freepik.com/foto-gratis/ingredientes-cocinar-pasta-sobre-fondo-madera_23-2147925943.jpg');
 }
 
-.carnes-box:hover {
-    transform: scale(1.05); /* Efecto de aumento al pasar el ratón por encima */
-}
-
-.carnes-box img {
+/* Estilo de la imagen dentro de la caja */
+.chorizos-box img {
     max-width: 100%;
     height: auto;
     margin-bottom: 10px;
-    border-radius: 5px;
 }
 
-.carnes-box h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #333;
+/* Estilo para el botón "Comprar" */
+.chorizos-box button {
+    display: block;
+    margin: 0 auto;
 }
-
-.carnes-box p {
-    font-size: 1rem;
-    color: #777;
-}
-
-

@@ -28,7 +28,10 @@ class ProductosController extends Controller
     }
     
     
-    
+    public function compra()
+    {
+        return view('carnes');
+    }
     /**
      * Show the form for creating a new resource.
      */
