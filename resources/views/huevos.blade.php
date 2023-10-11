@@ -1,32 +1,31 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tipos de Jamón</title>
+        <link rel="stylesheet" href="{{ asset('css/huevos.css') }}"><!-- Agrega tu archivo CSS personalizado -->
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+        <title>{{ config('app.name', 'Laravel') }}</title>
+        <!-- Fonts -->
+        <link rel="dns-prefetch" href="//fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
-        <link rel="stylesheet" href="{{ asset('public/build') }}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-
+            <link rel="stylesheet" href="{{ asset('public/build') }}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <!-- Scripts -->
+        @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
-
-    <header>
+<header>
     <div class="bobb">
         <div id="app">
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                 <div class="container">
-                    
                     <a class="navbar-brand" href="{{ url('/') }}">
                         <h2 style="font-family: 'Times New Roman', Times, serif">Salsamentaria Juanchos</h2>
                     </a>
@@ -78,75 +77,34 @@
                 </div>
             </nav>
         </div>
-     </header>
-    
-     <body>
         @include('menu')
-       
-        <div class="titulo">
-            <h1>CATEGORIAS</h1>
-        <div class="todo">
-            <div class="centro">
-                <a href="{{route('compra')}}">
-                @foreach ($catego as $cate)
-                
-                <div class="holaa">
-                    <a href=""><img src="{{ asset('img') . '/' . $cate->imagen }}" class="card-img-top" alt="..."></a>
-                    
-                    <h5 class="card-title">{{ $cate->nombre }}</h5>
-                    <!-- Agrega aquí el enlace o cualquier otro contenido que desees -->
+     </header>
+<body>
+    <div class="container">
+        <h1>Huevos</h1>
+        <div class="huevos">
+            <div class="huevos-box">
+                <img src="{{ asset('img/huevos.jpg') }}" alt="Huevos">
+                <h3>Chorizos</h3>
+                <p>Huevos triple A (18000)</p>
+                <div class="form-group">
+                    <label for="cantidad">Cantidad:</label>
+                    <input type="number" id="cantidad" name="cantidad" class="form-control" min="1" value="1">
                 </div>
-                @endforeach
-            </a>
+                <button class="btn btn-primary">Comprar</button>
+            </div>
+            <div class="huevos-box">
+                <img src="{{ asset('img/huevos.jpg') }}" alt="Huevos">
+                <h3>Huevos doble A</h3>
+                <p>precio: (15000)</p>
+                <div class="form-group">
+                    <label for="cantidad">Cantidad:</label>
+                    <input type="number" id="cantidad" name="cantidad" class="form-control" min="1" value="1">
+                </div>
+                <button class="btn btn-primary">Comprar</button>
             </div>
         </div>
-        <main class="py-4">
-            @yield('content')
-        </main>
-        <div style="background-color: rgb(255, 255, 255)" class="abaj">
-            <h3>con el derecho reservado al autor</h3>
-        </div>
     </div>
+</div>
 </body>
 </html>
-<style>
-body{
-     background-image: url("https://img.freepik.com/vector-premium/fondo-transparente-alimentos_651154-996.jpg");
-}
-.todo {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 20px auto;
-    max-width: 1000px; /* Ajusta el ancho máximo del contenedor */
-    padding: 20px; /* Espacio alrededor del contenido */
-}
-
-/* Estilo para cada caja de imagen y su contenido */
-.holaa {
-    width: 23%; /* Ancho de la caja de imagen */
-    height: 220px; /* Altura fija para las cajas (ajusta según tus preferencias) */
-    margin: 10px;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    display: inline-block; /* Para que las cajas se coloquen en línea */
-    vertical-align: top; /* Para alinear las cajas en la parte superior */
-}
-
-.holaa img {
-    max-width: 100%;
-    max-height: 80%; /* Hace que las imágenes se ajusten a la altura fija de las cajas */
-}
-
-/* Estilo para el título */
-.titulo {
-    text-align: center;
-    margin: 20px 0;
-    color: #333;
-    font-size: 24px;
-}
-
-
-</style>

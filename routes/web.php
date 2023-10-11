@@ -33,6 +33,7 @@ Route::get('/index', [App\Http\Controllers\ClienteController::class, 'index'])->
 
 Route::get('/cambiar-paginacion/{perPage}', 'productosController@cambiarPaginacion')->name('cambiarPaginacion');
 
+Route::get('compra', [App\Http\Controllers\productosController::class, 'compra'])->name('compra');
 
 Route::get('productos', [App\Http\Controllers\productosController::class, 'index'])->name('productos.index');
 Route::get('imagenes', [App\Http\Controllers\productosController::class, 'show'])->name('imagenes');
@@ -45,6 +46,16 @@ Route::get('/carnes', function () {
 Route::get('/quesos', function () {
     return view('quesos');
 });
+Route::get('/obleas', function () {
+    return view('obleas');
+});
+Route::get('/chorizos', function () {
+    return view('chorizos');
+});
+Route::get('/huevos', function () {
+    return view('huevos');
+});
+
 
 
 
