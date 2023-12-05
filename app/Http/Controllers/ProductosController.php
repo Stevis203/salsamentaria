@@ -38,7 +38,7 @@ class ProductosController extends Controller
     public function create()
     {
         //
-        
+       
   
     }
 
@@ -48,6 +48,16 @@ class ProductosController extends Controller
     public function store(Request $request)
     {
         //
+        Productos::create([
+            'producto'=>$request['producto'],
+            'categoria'=>$request['categoria'],
+            'nombre'=>$request['nombre'],
+            'producto'=>$request['producto'],
+            'estado'=>$request['estado'],
+            'precio'=>$request['precio'],
+            'descripcion'=>$request['descripcion']
+        ]);
+        return redirect()->route('administrador');
         
     }
 

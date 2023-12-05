@@ -21,7 +21,7 @@
 
 </head>
 
-    <header>
+<header>
     <div class="bobb">
         <div id="app">
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -91,7 +91,7 @@
                 @foreach ($catego as $cate)
                 
                 <div class="holaa">
-                    <a href=""><img src="{{ asset('img') . '/' . $cate->imagen }}" class="card-img-top" alt="..."></a>
+                    <a href="{{ route('todo')}}"><img src="{{ asset('img') . '/' . $cate->imagen }}" class="card-img-top" alt="..."></a>
                     
                     <h5 class="card-title">{{ $cate->nombre }}</h5>
                     <!-- Agrega aquí el enlace o cualquier otro contenido que desees -->

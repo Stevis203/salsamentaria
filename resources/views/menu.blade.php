@@ -21,7 +21,7 @@ li {
 
 li a {
     display: block;
-    color: white; 
+    color: rgb(255, 255, 255); 
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -29,7 +29,8 @@ li a {
 }
 
 li a:hover {
-    background-color: #ff6600; /* Color de fondo al pasar el mouse sobre el enlace */
+    background-color: #20b5cf; /* Color de fondo al pasar el mouse sobre el enlace */
+    color: white
 }
 
     </style>

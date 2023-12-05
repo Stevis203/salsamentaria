@@ -18,17 +18,23 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="{{ asset('css/administrador.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/admin.css')}}">
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
  
 </head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<body class="qq">
+    <style>
+        .qq{
+            background-image: url('/img/bicoin.jpg');
+                mask-repeat: no-repeat;
+        }
+    </style>
+    <div class="look" id="app">
+        <nav class="navbar navbar-expand-md navbar-light  shadow-sm">
             <div class="container">
                 <a class="navbar-brand">
-                    <h2 style="font-family: 'Times New Roman', Times, serif;color: rgb(0, 0, 0)">Salsamentaria Juanchos</h2>
+                    <h2 style="font-family: 'Times New Roman', Times, serif;color: rgb(255, 255, 255)">Salsamentaria Juanchos</h2>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -56,7 +62,7 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a style="color: white" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -76,96 +82,73 @@
                 </div>
             </div>
         </nav>
-
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Navbar</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                  </li>
-                </ul>
-                <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Buscar</button>
-                </form>
-              </div>
-            </div>
-          </nav>
-
+        
         <div>
-            <div style="background-color: rgb(0, 0, 0)" class="contenido">
+            <div style=" text-align: center" class="contenido">
                 <h1 style="color: rgb(255, 255, 255);font-family: 'Times New Roman', Times, serif ">BIENVENIDO QUERIDO ADMINISTRADOR</h1>
             </div>
             <div class="contenido">
                 <div class="centro">
                     <div class="holaa">
-                        <a href="{{ route('mscliente')}}"><img src="{{ asset('img/client.jpg')}}" class="" alt="..."></a>
-                        
-                        <h5 class="card-title">{{'CLIENTES'}}</h5>
-                        <!-- Agrega aquí el enlace o cualquier otro contenido que desees -->
+                        <h5>CLIENTES</h5>
+                        <a href="{{ route('mscliente')}}"><img src="{{ asset('img/vende.jpg')}}" class="" alt="..."></a> 
                     </div>
 
                     <div class="holaa">
-                        <a href="{{ route('msvendedor')}}"><img src="{{ asset('img/zx.jpg')}}" class="" alt="..."></a>
-                        
-                        <h5 class="card-title">{{'VENDEDORES'}}</h5>
-                        <!-- Agrega aquí el enlace o cualquier otro contenido que desees -->
+                        <h5>VENDEDORES</h5>
+                        <a href="{{ route('msvend')}}"><img src="{{ asset('img/looo.jpg')}}" class="" alt="..."></a>
                     </div>
 
                     <div class="holaa">
-                        <a href="{{ route('msadministrador')}}"><img src="{{ asset('img/zz.jpg')}}" class="" alt="..."></a>
-                        
-                        <h5 class="card-title">{{'ADMINISTRADORES'}}</h5>
-                        <!-- Agrega aquí el enlace o cualquier otro contenido que desees -->
+                        <h5>ADMINISTRADORES</h5>
+                        <a href="{{ route('msadministrador')}}"><img src="{{ asset('img/adminitro.png')}}" class="" alt="..."></a>
                     </div>
 
                     <div class="holaa">
-                        <a href="{{ route('msproveedor')}}"><img src="{{ asset('img/provee.jpg')}}" class="" alt="..."></a>
-                        
-                        <h5 class="card-title">{{'PROVEEDORES'}}</h5>
-                        <!-- Agrega aquí el enlace o cualquier otro contenido que desees -->
+                        <h5>PROVEEDORES</h5>
+                        <a href="{{ route('msproveedor')}}"><img src="{{ asset('img/84.jpg')}}" class="" alt="..."></a>
                     </div>
                 </div>
-
                 <div style="justify-content: center" class="centro">
                     <div class="holaa">
-                        <a href="{{ route('nevo') }}"><img src=" {{ asset('img/crea.jpg')}}" class="" alt="..."></a>
-                        
-                        <h5 class="card-title">{{'CREAR'}}</h5>
-                        <h5 class="card-title">{{'USUARIOS'}}</h5>
-                        <!-- Agrega aquí el enlace o cualquier otro contenido que desees -->
+                        <h5>AGREGAR<br> PRODUCTO</h5>
+                        <a href="{{ route('agrecate')}}"><img class="asd" src="{{ asset('img/masssss.jpg')}}" class="" alt="..."></a>
                     </div>
+
+                    <div class="holaa">
+                        <h5>AGREGAR <br> USUARIO</h5>
+                        <a href="{{ route('agreusus')}}"><img class="asd" src="{{ asset('gif/hello-2488_256.gif')}}" class="" alt="..."></a>
+                    </div>
+                    <style>
+                        .asd{
+                            width: 220px;
+                            height: 200px;
+                            background-color: white;
+                        }
+                        img{
+                            width: 200px
+                        }
+                        h5{
+                            text-align: center;
+                            color: aqua
+                        }
+                        .holaa{
+                            border-radius: 30px
+                        }
+                    </style>
                 </div>
             </div>
-            <div style="text-align: center; background-color: rgb(0, 0, 0)">
-                <h4 style="color: rgb(255, 255, 255);font-family: 'Times New Roman', Times, serif" > CON DERECHOS RESERVADOS AL AUT@R</h4>
-            </div>
+           
+        </div>
+        <div>
+
         </div>
         <main class="py-4">
             @yield('content')
         </main>
+    </div>
+    <div style="text-align: center;  width: 100% ">
+        <h4 style="color: rgb(255, 255, 255);font-family: 'Times New Roman', Times, serif" > CON DERECHOS RESERVADOS AL AUT@R</h4>
     </div>
 </body>
 </html>

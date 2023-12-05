@@ -95,10 +95,10 @@
                 <a style="color: white" class="nav-link active" aria-current="page" href="{{ route('administrador')}}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="msproveedor">Proveedor</a>
+                <a class="nav-link" href="mscliente">Cliente</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ route('msvend')}}">Vendedor</a>
+                <a class="nav-link" href="msproveedor">Proveedor</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="msadministrador">Administrador</a>
@@ -120,7 +120,7 @@
           </div>
         </nav>
   
-      <h1 style="text-align: center; margin: 10px; font-family: 'Times New Roman', Times, serif; color:white">MIRA LOS CLIENTES DE LA EMPRESA</h1>
+      <h1 style="text-align: center; margin: 10px; font-family: 'Times New Roman', Times, serif; color:white">MIRA LOS VENDEDORES DE LA EMPRESA</h1>
       <main>
           <div class="container">
               <table class="table table-bordered table-dark">
@@ -132,7 +132,7 @@
                       <td style="background-color: dimgrey; color: white">TELEFONO</td>
                       <td style="background-color: dimgrey; color: white">DIRECCION</td>            
                       <td style="background-color: dimgrey; color: white">CORREO ELECTRONICO</td>
-                      <td style="background-color: dimgrey; color: white">ESTADO</td>  
+                      <td style="background-color: dimgrey; color: white">ESTADO</td>
                       <td style="background-color: dimgrey; color: white" colspan="2">ACCIONES</td>
           
                   </tr>

@@ -23,6 +23,7 @@ class msadministradorController extends Controller
     public function create()
     {
         //
+        return view('layouts.administrador');
     }
 
     /**
@@ -59,12 +60,14 @@ class msadministradorController extends Controller
         //
         $user = User::findOrFail($id);
         $user->update([
+                
             'name'=>$request['NOMBRE'],
             'apellido'=>$request['APELLIDO'],
             'documento'=>$request['DOCUMENTO'],
             'telefono'=>$request['TELEFONO'],
             'direccion'=>$request['DIRECCION'],
-            'email'=>$request['CORREO']
+            'email'=>$request['CORREO'],
+            'estado'=>$request['ESTADO']
         ]);
         return redirect()->route('msadministrador');
     }
