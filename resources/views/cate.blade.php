@@ -21,7 +21,7 @@
 
 </head>
 
-    <header>
+<header>
     <div class="bobb">
         <div id="app">
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -86,6 +86,7 @@
      <body>    
         <div class="todo">
             <div class="centro">
+<<<<<<< HEAD
                 @foreach ($categoria as $fila)
                     <div class="holaa">
                             <img src="{{ asset('img') . '/' . $fila->imagen }}" class="card-img-top" alt="...">
@@ -93,6 +94,17 @@
                             <a href="{{ route('categoria', ['id' => $fila->codigocategoria]) }}" class="btn btn-primary">Ver</a>
                         </a>
                     </div>
+=======
+                <a href="{{route('compra')}}">
+                @foreach ($catego as $cate)
+                
+                <div class="holaa">
+                    <a href="{{ route('todo')}}"><img src="{{ asset('img') . '/' . $cate->imagen }}" class="card-img-top" alt="..."></a>
+                    
+                    <h5 class="card-title">{{ $cate->nombre }}</h5>
+                    <!-- Agrega aquí el enlace o cualquier otro contenido que desees -->
+                </div>
+>>>>>>> ramaMafe
                 @endforeach
             </div>            
         </div>

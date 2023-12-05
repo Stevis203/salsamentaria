@@ -59,12 +59,14 @@ class msclienteController extends Controller
         //
         $user = User::findOrFail($id);
         $user->update([
+            
             'name'=>$request['NOMBRE'],
             'apellido'=>$request['APELLIDO'],
             'documento'=>$request['DOCUMENTO'],
             'telefono'=>$request['TELEFONO'],
             'direccion'=>$request['DIRECCION'],
-            'email'=>$request['CORREO']
+            'email'=>$request['CORREO'],
+            'estado'=>$request['ESTADO']
         ]);
         return redirect()->route('mscliente');
     }

@@ -17,7 +17,11 @@ li {
 
 li a {
     display: block;
+<<<<<<< HEAD
     color: rgb(227, 216, 216); 
+=======
+    color: rgb(255, 255, 255); 
+>>>>>>> ramaMafe
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -25,7 +29,12 @@ li a {
 }
 
 li a:hover {
+<<<<<<< HEAD
     background-color: #332821; /* Color de fondo al pasar el mouse sobre el enlace */
+=======
+    background-color: #20b5cf; /* Color de fondo al pasar el mouse sobre el enlace */
+    color: white
+>>>>>>> ramaMafe
 }
 
     </style>

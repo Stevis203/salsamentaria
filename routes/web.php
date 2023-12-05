@@ -63,10 +63,10 @@ Route::get('editar/{id}', [App\Http\Controllers\msclienteController::class, 'edi
 Route::get('clientes/Actualizar/{id}',[App\Http\Controllers\msclienteController::class, 'update'])->name('mscliente.update');
 Route::get('clientes/Eliminar/{id}',[App\Http\Controllers\msclienteController::class, 'destroy'])->name('mscliente.destroy');
 
-Route::get('mnvendedor', [App\Http\Controllers\msvendedorController::class, 'index'])->name('msvendedor');
+Route::get('mnvendedor', [App\Http\Controllers\msvendedorController::class, 'index'])->name('msvend');
 Route::get('editar/{id}', [App\Http\Controllers\msvendedorController::class, 'edit'])->name('edit');
-Route::get('vendedor/Actualizar/{id}',[App\Http\Controllers\msvendedorController::class, 'update'])->name('msvendedor.update');
-Route::get('vendedor/Eliminar/{id}',[App\Http\Controllers\msvendedorController::class, 'destroy'])->name('msvendedor.destroy');
+Route::get('vendedor/Actualizar/{id}',[App\Http\Controllers\msvendedorController::class, 'update'])->name('msvend.update');
+Route::get('vendedor/Eliminar/{id}',[App\Http\Controllers\msvendedorController::class, 'destroy'])->name('msvend.destroy');
 
 Route::get('msproveedor', [App\Http\Controllers\msproveedorController::class, 'index'])->name('msproveedor');
 Route::get('editar/{id}', [App\Http\Controllers\msproveedorController::class, 'edit'])->name('edit');
@@ -78,5 +78,25 @@ Route::get('editar/{id}', [App\Http\Controllers\msadministradorController::class
 Route::get('admin/Actualizar/{id}',[App\Http\Controllers\msadministradorController::class, 'update'])->name('msadministrador.update');
 Route::get('admin/Eliminar/{id}',[App\Http\Controllers\msadministradorController::class, 'destroy'])->name('msadministrador.destroy');
 
+<<<<<<< HEAD
 Route::get('nevo', [App\Http\Controllers\crearController::class, 'index'])->name('nevo');
 
+=======
+//*Route::post('productos/agregar', [App\Http\Controllers\ProductosController::class, 'store'])->name('productos.store');*//
+
+
+
+Route::post('cre', [App\Http\Controllers\agreCateController::class, 'create'])->name('agrecate');
+Route::post('cate', [App\Http\Controllers\agreCateController::class, 'store'])->name('agrecategi');
+
+
+
+Route::get('agri', [App\Http\Controllers\agreUsController::class, 'create'])->name('agreusus');
+Route::post('usuar', [App\Http\Controllers\agreUsController::class, 'store'])->name('agreusas');
+
+Route::get('nevo', [App\Http\Controllers\crearController::class, 'index'])->name('nevo');
+
+Route::get('todo', [App\Http\Controllers\cateController::class, 'create'])->name('todo');
+
+Route::get('administrador', [App\Http\Controllers\msadministradorController::class, 'create'])->name('administrador');
+>>>>>>> ramaMafe
