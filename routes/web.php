@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\clienteController;
+use App\Http\Controllers\CarritoController;
 
 
 /*
@@ -23,37 +24,37 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
-
 Route::get('/categorias', [App\Http\Controllers\cateController::class, 'index'])->name('cate.index');
-
-
+Route::get('/iniciar', [App\Http\Controllers\ClienteController::class, 'index'])->name('iniciar');
 Route::get('/index', [App\Http\Controllers\ClienteController::class, 'index'])->name('cliente.index');
-
+Route::get('/cat', [App\Http\Controllers\productosController::class, 'cat'])->name('cat');
 Route::get('/cambiar-paginacion/{perPage}', 'productosController@cambiarPaginacion')->name('cambiarPaginacion');
 
 Route::get('compra', [App\Http\Controllers\productosController::class, 'compra'])->name('compra');
-
+Route::get('/cate/{id}', [App\Http\Controllers\productosController::class, 'mostrarProductosPorCategoria'])->name('categoria');
 Route::get('productos', [App\Http\Controllers\productosController::class, 'index'])->name('productos.index');
 Route::get('imagenes', [App\Http\Controllers\productosController::class, 'show'])->name('imagenes');
-Route::get('/jamon', function () {
-    return view('jamon');
+
+//rutas carro
+
+Route::get('/mostrar-productos', 'ProductoController@mostrarProductos')->name('mostrar-productos');
+Route::post('/agregar-al-carrito/{producto}', [CarritoController::class, 'agregarAlCarrito'])->name('agregar-al-carrito');
+Route::get('/ver-carrito', [CarritoController::class, 'verCarrito'])->name('ver-carrito');
+
+
+Route::get('/Contactos', function () {
+    return view('Contactos');
 });
-Route::get('/carnes', function () {
-    return view('carnes');
+
+Route::get('/Servicios', function () {
+    return view('Servicios');
 });
-Route::get('/quesos', function () {
-    return view('quesos');
+Route::get('/cantidad', function () {
+    return view('cantidad');
 });
-Route::get('/obleas', function () {
-    return view('obleas');
-});
-Route::get('/chorizos', function () {
-    return view('chorizos');
-});
-Route::get('/huevos', function () {
-    return view('huevos');
+Route::get('/mision-vision', function () {
+    return view('misionvi');
 });
 
 
@@ -78,3 +79,4 @@ Route::get('admin/Actualizar/{id}',[App\Http\Controllers\msadministradorControll
 Route::get('admin/Eliminar/{id}',[App\Http\Controllers\msadministradorController::class, 'destroy'])->name('msadministrador.destroy');
 
 Route::get('nevo', [App\Http\Controllers\crearController::class, 'index'])->name('nevo');
+

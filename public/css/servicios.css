@@ -1,0 +1,53 @@
+/* Reset de estilos y configuración básica */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+/* Encabezado */
+header {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Sección de Servicios */
+section {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+h2 {
+    color: #4CAF50;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 5px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+/* Pie de Página */
+footer {
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px;
+    background-color: #f8f8f8;
+}
+
+/* Enlaces */
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

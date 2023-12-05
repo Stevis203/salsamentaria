@@ -28,7 +28,7 @@
                 <div class="container">
                     
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <h2 style="font-family: 'Times New Roman', Times, serif">Catalogó de productos</h2>
+                        <h2 style="font-family: 'Times New Roman', Times, serif">Nuestros Servicios</h2>
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"></span>
@@ -78,84 +78,90 @@
                 </div>
             </nav>
         </div>
-        <div class=menu  >
             @include('menu')
         </div>
      </header>
-    
-     <body>    
-        <div class="todo">
-            <div class="centro">
-                @foreach ($categoria as $fila)
-                    <div class="holaa">
-                            <img src="{{ asset('img') . '/' . $fila->imagen }}" class="card-img-top" alt="...">
-                            <h5 class="card-title">{{ $fila->nombre }}</h5>
-                            <a href="{{ route('categoria', ['id' => $fila->codigocategoria]) }}" class="btn btn-primary">Ver</a>
-                        </a>
-                    </div>
-                @endforeach
-            </div>            
+</html>
+    <title>Servicios - Salsamentaria Juachos</title>
+    <style>
+      body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            background-image: url('https://img.freepik.com/vector-premium/caricaturas-fondo-patrones-hamburguesas_24640-10330.jpg?w=2000'); 
+        }
+        footer {
+        background-color: #e44d26;
+        color: white;
+        text-align: center;
+        padding: 1em;
+        width: 100%;
+}
+        .titulo{
+            color:white;
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 0.5em;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.7);
+            margin-top: 60px;
+           
+        }
+
+        h1, h2, h3 {
+            color: black;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .highlight {
+            color: #e44d26;
+            font-weight: bold;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <section>
+        <div>
+            <h3>Salsas Exquisitas</h3>
+            <p>Descubre el sabor auténtico con nuestras salsas caseras, preparadas con ingredientes frescos y seleccionados con esmero. Desde la clásica Salsa de Tomate hasta nuestra innovadora Salsa de Mango Picante, cada bocado es una explosión de sabores.</p>
         </div>
-        <main class="py-4">
-            @yield('content')
-        </main>
-    <script src="{{ asset('script.js') }}"></script>
+
+        <div>
+            <h3>Condimentos Premium</h3>
+            <p>Eleva tus platillos con nuestra selección de condimentos premium. Desde nuestras sales marinas hasta nuestras mezclas de hierbas exclusivas, te ofrecemos ingredientes que transformarán tus comidas.</p>
+        </div>
+
+        <div>
+            <h3>Snacks Irresistibles</h3>
+            <p>Acompaña tus momentos con nuestros snacks irresistibles. Desde nachos crujientes hasta nueces tostadas, satisfacemos todos tus antojos con productos de la más alta calidad.</p>
+        </div>
+
+        <div class="highlight">
+            <p>¡Visítanos hoy y deja que Juachos sea tu elección para condimentos y snacks de calidad superior!</p>
+        </div>
+    </section>
 </body>
 <footer>
     <p>&copy; {{ date('Y') }} Salsamentaria Juanchos - Todos los derechos reservados</p>
     <p>Para consultas y pedidos, llama al [3204336285] o visítanos en [Cra11 #15A-24 Tunja Boyacá].</p>
 </footer>
 </html>
-<style>
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f5f5f5;
-    min-height: 100vh;
-    position: relative;
-    background-image: url("https://img.freepik.com/vector-premium/fondo-transparente-alimentos_651154-996.jpg");
-}
-
-.todo {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: 20px auto;
-    max-width: 1200px; /* Ajusta el ancho máximo del contenedor */
-    padding: 20px;
-    margin-top: 10px;
-}
-
-.holaa {
-    width: 40%; /* Ajusta el ancho de las cajas */
-    height: 300px; /* Ajusta la altura de las cajas */
-    margin: 10px;
-    padding: 20px; /* Ajusta el espacio interno de las cajas */
-    background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.holaa img {
-    width: 100%;
-    height: 100%; /* Ajusta el tamaño de la imagen */
-    object-fit: cover;
-}
-
-.btn-ver {
-    margin-top: auto;
-}
-
-footer {
-    background-color: #e44d26;
-    color: white;
-    text-align: center;
-    padding: 1em;
-    width: 100%;
-}
-
-</style>

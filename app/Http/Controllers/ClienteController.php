@@ -11,8 +11,9 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        //
-        //return view('layouts.cate');
+
+
+    return view('layouts/cliente');
     }
 
     /**

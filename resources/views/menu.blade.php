@@ -5,11 +5,7 @@
     <style>
         
         ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333; /* Color de fondo del menú */
+    background-color: black; /* Color de fondo del menú */
     text-align: center; /* Centra el menú horizontalmente */
 }
 
@@ -21,7 +17,7 @@ li {
 
 li a {
     display: block;
-    color: white; 
+    color: rgb(227, 216, 216); 
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -29,7 +25,7 @@ li a {
 }
 
 li a:hover {
-    background-color: #ff6600; /* Color de fondo al pasar el mouse sobre el enlace */
+    background-color: #332821; /* Color de fondo al pasar el mouse sobre el enlace */
 }
 
     </style>
@@ -37,10 +33,10 @@ li a:hover {
 <body>
 
 <ul>
-    <li><a href="productos">Productos</a></li>
-    <li><a href="categorias">Categorías</a></li>
-    <li><a href="">Servicios</a></li>
-    <li><a href="">Contactos</a></li>
+    <li><a href="{{ route('iniciar') }}">Inicio</a></li>
+    <li><a href="{{ route('cat') }}">Productos</a></li>
+    <li><a href="Servicios">Servicios</a></li>
+    <li><a href="Contactos">Contactos</a></li>
 </ul>
 
 </body>

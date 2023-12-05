@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\categoria;
-use App\Models\producto;
+use App\Models\Cate;
+use App\Models\Producto;
 use DB;
 
 class ProductosController extends Controller
@@ -87,4 +87,18 @@ class ProductosController extends Controller
         //
        
     }
+    public function mostrarProductosPorCategoria($id)
+{
+    $productos = Producto::where('codigocategoria','=', $id)->orderBy('nombre', 'ASC')->get();
+
+    return view('mostrarpro', [ 'productos' => $productos]);
+    
+    
+}
+
+public function cat()
+{
+    $categoria = Cate::all();
+    return view('cate', ['categoria' => $categoria]);
+}
 }

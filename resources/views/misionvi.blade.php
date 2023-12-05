@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Tipos de Jamón</title>
-        <link rel="stylesheet" href="{{ asset('css/obleas.css') }}"><!-- Agrega tu archivo CSS personalizado -->
-        <!-- CSRF Token -->
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salsamentaria Juanchos</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
-        <!-- Fonts -->
-        <link rel="dns-prefetch" href="//fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <title>{{ config('app.name', 'Laravel') }}</title>
+    <link rel="stylesheet" href="{{ asset('css/inicio.css') }}">
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
-            <link rel="stylesheet" href="{{ asset('public/build') }}">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <!-- Scripts -->
-        @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+        <link rel="stylesheet" href="{{ asset('public/build') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Scripts -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    
+    <title>Salsamentaria</title>
 </head>
 <header>
     <div class="bobb">
@@ -54,7 +54,8 @@
                                         <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                     </li>
                                 @endif
-                            @else
+                        
+                                @else
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ Auth::user()->name }}
@@ -79,34 +80,77 @@
         </div>
         @include('menu')
      </header>
+    <title>Misión y Visión</title>
+</head>
 <body>
-    <div class="container">
-        <h1>Obleas</h1>
-        <div class="Obleas">
-            <div class="obleas-box">
-                <img src="{{ asset('img/obleas.jpg') }}" alt="Obleas">
-                <h3>Obleas</h3>
-                <p>Obleas X50Unidades(5000)</p>
-                <div class="form-group">
-                    <label for="cantidad">Cantidad:</label>
-                    <input type="number" id="cantidad" name="cantidad" class="form-control" min="1" value="1">
-                </div>
-                <button class="btn btn-primary">Comprar</button>
+    <div class="cajitas">
+        <section class="mision-vision">
+            <div class="mision">
+                <h2>Misión</h2>
+                <p>
+                    Nuestra misión es proporcionar productos/servicios de alta calidad que satisfagan las necesidades y expectativas de nuestros clientes, contribuyendo al bienestar y progreso de la comunidad.
+                </p>
             </div>
-            <div class="Obleas">
-            <div class="obleas-box">
-                <img src="{{ asset('img/obleas.jpg') }}" alt="Obleas">
-                <h3>Obleas</h3>
-                <p>Obleas X100 Unidades</p>
-                <div class="form-group">
-                    <label for="cantidad">Cantidad:</label>
-                    <input type="number" id="cantidad" name="cantidad" class="form-control" min="1" value="1">
-                </div>
-                <button class="btn btn-primary">Comprar</button>
+
+            <div class="vision">
+                <h2>Visión</h2>
+                <p>
+                    Ser reconocidos como líderes en nuestra industria, innovando continuamente para ofrecer soluciones que generen un impacto positivo en la sociedad y el medio ambiente.
+                </p>
             </div>
-        </div>
-            <!-- Agrega más tipos de jamón si es necesario -->
-        </div>
+        </section>
     </div>
+
+    <footer>
+        <!-- Puedes agregar un pie de página aquí si lo deseas -->
+    </footer>
+
 </body>
 </html>
+<style>
+    body {
+        background-image: url('https://i.pinimg.com/474x/d7/f7/92/d7f792f87211dd36735982f4cae72e08.jpg');
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    
+}
+
+.cajitas {
+    max-width: 1000px;
+    height: 250px;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo semi-transparente para mejor legibilidad */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 100px;
+}
+
+.mision-vision {
+    display: flex;
+    justify-content: space-around;
+}
+
+.mision,
+.vision {
+    flex: 1;
+    padding: 20px;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Marco con sombra */
+    text-align: center; /* Centra el contenido dentro de .mision y .vision */
+}
+
+h2 {
+    color: #0c0d0e;
+}
+header {
+    text-align: center; /* Centra el contenido dentro del header */
+    padding: 20px;
+}
+
+/* Puedes agregar más estilos según tus preferencias */
+
+</style>
